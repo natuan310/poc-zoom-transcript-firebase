@@ -1,0 +1,26 @@
+{
+  "name": "websdk-cdn",
+  "version": "1.8.1",
+  "description": "Zoom sample app for web client WebSDK",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "socket.io": "^3.0.1",
+    "socket.io-stream": "^0.9.1",
+    "concurrently": "^3.5.1",
+    "http-server": "^0.12.1",
+    "throng": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "dev": "concurrently \"http-server -a 0.0.0.0 -p 9999 -c-1 -o index.html\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"http-server -a 0.0.0.0 -p 9999 -c-1 -o index.html\"",
+    "https": "concurrently \"http-server -a 0.0.0.0 -p 9999 -c-1 -S -C localhost.crt -K localhost.key -o https://localhost:9999/index.html\""
+  },
+  "author": "Yang Jack",
+  "license": "ISC"
+}

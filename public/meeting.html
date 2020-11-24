@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Zoom WebSDK</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/1.8.1/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="https://source.zoom.us/1.8.1/css/react-select.css" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="origin-trial" content="">
+
+    <!-- RecordRTC, Socket.io, Socket.io-stream -->
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.0/socket.io.js"></script>
+    <!-- <script src="https://transcript-server.herokuapp.com/socket.io/socket.io.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io-stream/0.9.1/socket.io-stream.js"></script>
+    <style>
+        /* Closed-Caption */
+        .closed-cap {
+            display: block;
+            position: absolute;
+            bottom: 52px;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            margin-bottom: 17px;
+            z-index: 999;
+        }
+
+        /* Closed-Caption */
+        .closed-cap-text {
+            display: inline-block;
+            border-radius: 5px;
+            margin: 2px;
+            padding: 10px 15px;
+            font-size: 14px;
+            color: #fff;
+            max-width: 90%;
+            background-color: #212326;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="closed-cap" id="closed-caption">
+        <!-- <div class="row">
+            <div class="closed-cap-text" id="user-name">User Name</div>
+        </div>
+        <div class="row">
+            <div class="closed-cap-text" id="transcript">Transcript</div>
+        </div> -->
+        <div class="row">
+            <div class="closed-cap-text" id="translation">Translation</div>
+        </div>
+    </div>
+
+    
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/jquery.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/lodash.min.js"></script>
+    <script src="https://source.zoom.us/zoom-meeting-1.8.1.min.js"></script>
+    <script src="js/tool.js"></script>
+    <script src="js/vconsole.min.js"></script>
+    <script src="js/meeting.js"></script>
+    <!-- <script src="js/audio.js"></script> -->
+
+
+
+    <script>
+        const simd = async () => WebAssembly.validate(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 10, 9, 1, 7, 0, 65, 0, 253, 15, 26, 11]))
+        simd().then((res) => {
+            console.log("simd check", res);
+        });
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.1.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+</body>
+
+</html>
